@@ -25,30 +25,30 @@
   Detects if there's a noob rush then handles it accordingly. Current strategy: group up and charge in.
   
 ### Special case: Imminent defeat/victory.
-	Sends my ships to the nearest corner if I'm certain to lose/starts making art if I'm certain to win.
+  Sends my ships to the nearest corner if I'm certain to lose/starts making art if I'm certain to win.
   
 ### Special case: Attacking enemies.
-	Finds ships closest to my planets/neutral planets and assigns a ship to each one. This uses the offensively-ineffective Outnumbered() function to ensure that the ships never really attack their targets, and get cover if they're under attack.
+  Finds ships closest to my planets/neutral planets and assigns a ship to each one. This uses the offensively-ineffective Outnumbered() function to ensure that the ships never really attack their targets, and get cover if they're under attack.
   
 ### Special case: Ship advantage
-	If I have 5 more ships than the everyone, I don't care about ensuring each ship only goes in when it outnumbers the enemy - just attack!
+  If I have 5 more ships than the everyone, I don't care about ensuring each ship only goes in when it outnumbers the enemy - just attack!
   
 ### Special case: Outnumbered Refactor
-	This code sorts ships by their distance to their closest enemy, has ship, by distance and if not already checked, identify any clusters around it, determine if the allied cluster is outnumbered, then sets each ship in that identified cluster to know it's been checked so that the loop really only does a small fraction of the ships. Works pretty well, written pretty poorly and quickly!
+  This code sorts ships by their distance to their closest enemy, has ship, by distance and if not already checked, identify any clusters around it, determine if the allied cluster is outnumbered, then sets each ship in that identified cluster to know it's been checked so that the loop really only does a small fraction of the ships. Works pretty well, written pretty poorly and quickly!
   
 ### Offensive strategy for leftover ships
   The current offensive strategy is to locate the closest planet that is either not full or not owned by me, and run a unique strategy for each three cases of ownership:
 
-			1. Not owned.
-				- If there are nearby enemies (scaling with planet radius), target the nearest docked enemy.
-				- Otherwise, try to dock.
-				- Otherwise, if you have no enemies in a really large radius and there are more than enough ships heading to the planet, find a new planet to target.
-				- Otherwise, continue moving towards the planet.
-			2. Owned by me but it needs more docked ships.
-				- If there are enough allies closer, go to the next planet.
-				- Otherwise dock or move to it.
-			3. Owned by someone else.
-				- Attack the closest docked ship.
+  1. Not owned.
+	- If there are nearby enemies (scaling with planet radius), target the nearest docked enemy.
+	- Otherwise, try to dock.
+	- Otherwise, if you have no enemies in a really large radius and there are more than enough ships heading to the planet, find a new planet to target.
+	- Otherwise, continue moving towards the planet.
+  2. Owned by me but it needs more docked ships.
+	- If there are enough allies closer, go to the next planet.
+	- Otherwise dock or move to it.
+  3. Owned by someone else.
+	- Attack the closest docked ship.
         
 ### Manage collision
   Sets targets for the Outnumbered ships, sorts all the desired targets, and manages collisions between ships and where they all want to go. Nifty and effective - some of my best and most efficient code.
