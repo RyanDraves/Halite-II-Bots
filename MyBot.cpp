@@ -735,7 +735,8 @@ int main() {
 				int max_corrections;
 				//Special 360 degree navigation check for bunny ships, including some altered collision checks for docked enemies/nearby enemies.
 				//I don't have bunny ships in this version.
-				/*if (ships[i].entity_id == bunny_id) {
+				if (ships[i].entity_id == bunny_id) {
+					/* This is phased out, as this version does not set a bunny id.
 					max_corrections = 361;
 					bool left = true;
 					//The loop now only checks ally targets with a distance closer than the ship target.
@@ -759,8 +760,8 @@ int main() {
 							left = true;
 						}
 						targets[i] = { ships[i].location.pos_x + new_target_dx, ships[i].location.pos_y + new_target_dy };
-					}
-				}*/
+					}*/
+				}
 				//Regular ship collision check.
 				else {
 					//The corrections go 90 degrees either way, and 1 is added because of the initial decrement.
