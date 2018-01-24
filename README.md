@@ -3,7 +3,7 @@
 
 
 ## Overview:
-  I finished ~rank 14 in the challenge (finals still pending but is turning out the same). Right now I'm a fairly inexperienced coder in my senior year of high school and was just finishing up my first real programming course when I started the challenge. Most of my code is what I perceive to be poorly written, but I'll go over how my final bot version operates here and in the source code itself. The other bot versions will contain comments as-is and were probably outdated!
+  I finished ~rank 14 in the challenge (finals still pending but is turning out the same). Right now I'm a fairly inexperienced coder in my senior year of high school and was just finishing up my first real programming course when I started the challenge. Most of my code is what I perceive to be poorly written, but I'll go over how my final bot version operates here and in the source code itself. The other bot versions will contain comments as-is which are probably outdated!
   
   
 #### Some quick jargon I used through comments/names within the code:
@@ -17,6 +17,9 @@
   
   
 ## Breakdown of the code (the important parts):
+
+### hlt folder
+  This is 90% the starter bot hlt folder, with some files tweaked with copies of almost the exact same function, but different parameters so I can pass in different types. The tweaks regard navigation code to avoid collision.
 
 ### Some comments
   Outdated details about what bot version I'm on, a repeat of the jargon I use, some major issues, and some minor issues.
